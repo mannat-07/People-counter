@@ -1,7 +1,7 @@
 # 👁️ People Counter with OpenCV
 
 Track how many people enter and exit an area using just a camera and a few lines of Python.  
-This project uses OpenCV's HOG detector + virtual lines to count people in real-time.
+This project uses OpenCV's HOG detector + virtual lines to count people in video.
 
 ### 🚀 Features
 - Detects people frame-by-frame  
