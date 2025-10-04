@@ -3,7 +3,7 @@
 Count people entering and exiting through a doorway using your webcam. The app detects people within a vertical band between two lines (Blue and Red) and counts when they cross from one side to the other. It’s designed to be robust in real scenes while staying simple to tune live.
 
 ## 🎥 Demo Video  
-[Watch the demo video](Output.mp4)
+![Watch the demo video](/Output.gif)
 
 ## 🚀 Features
 - Real‑time webcam processing (resized to 600px wide)
