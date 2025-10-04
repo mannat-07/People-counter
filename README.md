@@ -52,28 +52,6 @@ Calibration and tuning:
 - z / x: Narrow / widen the ROI pad (vertical band width around the lines)
 - c / v: Decrease / increase midpoint tolerance (reduces jitter around midpoint)
 
-## 🎯 Recommended starting values
-- SENS (weight_thresh): 0.50
-  - Raise (0.60–0.75) if you see boxes on walls/edges
-  - Lower (0.35–0.45) if people are missed in dim scenes
-- ROI pad (z/x): 5–12
-  - Shrink to ignore passers‑by outside the doorway
-- Midpoint margin (c/v): 8–12
-  - Increase if people hover near the midpoint and cause flips
-
-Advanced (edit in code if needed):
-- min_box_area: 1800–3000 — reject tiny detections
-- min_aspect, max_aspect: 0.25–0.8 — acceptable width/height ratio
-- min_dx_for_count: 12–20 — required net x‑movement for a count
-- trend_len: 3 — recent points to validate direction
-- frame_skip: 1–2 — processing cadence (2 = faster, 1 = smoother)
-
-## 🧭 Quick calibration flow
-1. Place Blue and Red lines to tightly bracket the doorway (a/d, j/l).
-2. Set SENS ~ 0.50. Raise if you see false positives, lower if missing people.
-3. Shrink ROI pad (z) until boxes outside the doorway disappear.
-4. If counts are jittery near the midpoint, increase midpoint margin (v) to ~12.
-5. If needed, increase min_dx_for_count in code to 15–20.
 
 ## 🧩 Display
 - IN (Blue→Red)
@@ -81,15 +59,7 @@ Advanced (edit in code if needed):
 - INSIDE (IN − OUT)
 - SENS (current sensitivity/weight threshold)
 
-## 🐞 Troubleshooting
-- Camera not opening: ensure no other app uses the webcam; try a different index than 0.
-- Too many false positives: raise SENS, shrink ROI pad, increase min_box_area.
-- Missing people: lower SENS, widen ROI pad slightly, set frame_skip to 1.
-- Double counts: increase midpoint margin; raise min_dx_for_count.
-- Module warning about “code”: the file name `code.py` shadows the stdlib `code` module; this is harmless. Rename to `people_counter.py` if you want to silence it.
-
 ## 📦 Use cases
 - Entrance/exit tracking for rooms, halls, stores
 - Live occupancy monitoring
 - Event attendance and capacity management
-
